@@ -1,0 +1,2 @@
+onmessage=function(e){var pixels=new Uint8ClampedArray(e.data.pixels);var completion=e.data.completion;var totalPixels=e.data.totalPixels;var result=false;var total=0;var other=0;for(var i=3;i<pixels.length;i+=4){if(pixels[i]>=30)total++;else other++;}
+result=total/totalPixels>completion/100;postMessage({result:result,pixels:total});}
